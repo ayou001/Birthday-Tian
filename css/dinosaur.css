@@ -1,0 +1,245 @@
+/* 引入Google Fonts中的Indie Flower和Amatic SC字体 */
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+body {
+    font-family: 'Indie Flower', cursive !important;
+    /* 使用Indie Flower字体，优先级高 */
+    background: #FDE3A7;
+    /* 设置背景颜色为CAPE HONEY */
+    margin: 0px;
+    /* 清除默认外边距 */
+    padding: 0px;
+    /* 清除默认内边距 */
+}
+
+/* 设置文本选择时的背景色为透明 */
+::selection {
+    background: transparent;
+}
+
+h4 {
+    font-size: 26px;
+    /* 设置字体大小为26像素 */
+    line-height: 1px;
+    /* 设置行高为1像素 */
+    font-family: 'Amatic SC', cursive !important;
+    /* 使用Amatic SC字体，优先级高 */
+}
+
+.color1 {
+    color: #1BBC9B;
+    /* 设置文字颜色为MOUNTAIN MEADOW */
+}
+
+/* 定义.color2类的样式 */
+.color2 {
+    color: #C0392B;
+    /* 设置文字颜色为TALL POPPY */
+}
+
+.card {
+    color: #013243;
+    /* 设置文字颜色为SHERPA BLUE */
+    position: absolute;
+    /* 设置定位为绝对定位 */
+    top: 50%;
+    /* 顶部偏移50% */
+    left: 50%;
+    /* 左侧偏移50% */
+    width: 300px;
+    /* 设置宽度为300像素 */
+    height: 400px;
+    /* 设置高度为400像素 */
+    background: #e0e1dc;
+    /* 设置背景颜色为e0e1dc */
+    transform-style: preserve-3d;
+    /* 保持3D变换 */
+    transform: translate(-50%, -50%) perspective(2000px);
+    /* 平移并设置透视 */
+    box-shadow: inset 300px 0 50px rgba(0, 0, 0, .5), 20px 0 60px rgba(0, 0, 0, .5);
+    /* 设置阴影效果 */
+    transition: 1s;
+    /* 设置过渡动画为1秒 */
+    cursor: pointer;
+    /* 设置鼠标样式为指针 */
+
+}
+
+.card.open {
+    transform: translate(-50%, -50%) perspective(2000px) rotate(15deg) scale(1.2);
+    /* 设置打开时的旋转和缩放效果 */
+    box-shadow: inset 20px 0 50px rgba(0, 0, 0, .5), 0 10px 100px rgba(0, 0, 0, .5);
+    /* 调整打开时的阴影效果 */
+    transition: 1s;
+    /* 设置过渡动画为1秒 */
+}
+
+.card.trans {
+    box-shadow: inset 20px 0 50px rgba(0, 0, 0, .5), 0 10px 100px rgba(0, 0, 0, .5);
+}
+
+.card .subcard {
+
+    /* 设置文字颜色为SHERPA BLUE */
+    position: relative;
+    /* 设置定位为绝对定位 */
+    top: -50%;
+    /* 顶部偏移50% */
+    left: 50%;
+    /* 左侧偏移50% */
+    width: 300px;
+    /* 设置宽度为300像素 */
+    height: 400px;
+    /* 设置高度为400像素 */
+    background: #e0e1dc;
+    /* 设置背景颜色为e0e1dc */
+    transform-style: preserve-3d;
+    /* 保持3D变换 */
+    transform: translate(-50%, -50%) perspective(2000px);
+    /* 平移并设置透视 */
+    box-shadow: inset 300px 0 50px rgba(0, 0, 0, .5), 20px 0 60px rgba(0, 0, 0, .5);
+    /* 设置阴影效果 */
+    transition: 1s;
+    /* 设置过渡动画为1秒 */
+    transform-origin: left;
+    /* 设置变换原点为左侧 */
+    display: none;
+
+}
+
+.card.open .subcard {
+    transform: translate(-50%, -50%) perspective(2000px);
+    /* 设置打开时的旋转和缩放效果 */
+    box-shadow: inset 20px 0 50px rgba(0, 0, 0, .5), 0 10px 100px rgba(0, 0, 0, .5);
+    /* 调整打开时的阴影效果 */
+
+
+}
+
+.card.trans .subcard {
+    transform: translate(-50%, -50%) rotateY(-135deg);
+    display: block;
+    transition: 1s;
+}
+
+.card .imgBox img {
+    min-width: 250px;
+    /* 设置最小宽度为250像素 */
+    max-height: 400px;
+    /* 设置最大高度为400像素 */
+}
+
+.card .imgBox {
+    width: 100%;
+    /* 宽度100% */
+    height: 100%;
+    /* 高度100% */
+    position: relative;
+    /* 设置定位为相对定位 */
+    transform-origin: left;
+    /* 设置变换原点为左侧 */
+    transition: .7s;
+    /* 设置过渡动画为0.7秒 */
+}
+
+.card.open .imgBox {
+    transform: rotateY(-135deg);
+    /* 设置打开时的Y轴旋转角度为-135度 */
+}
+
+.card.trans .imgBox {
+    transform: rotateY(135deg);
+    /* 设置打开时的Y轴旋转角度为-135度 */
+}
+
+.card .bark {
+    position: absolute;
+    /* 设置定位为绝对定位 */
+    background: #e0e1dc;
+    /* 设置背景颜色为e0e1dc */
+    width: 100%;
+    /* 宽度100% */
+    height: 100%;
+    /* 高度100% */
+    opacity: 0;
+    /* 设置透明度为0 */
+    transition: .7s;
+    /* 设置过渡动画为0.7秒 */
+}
+
+.card.open .bark {
+    opacity: 1;
+    /* 设置透明度为1 */
+    transition: .6s;
+    /* 设置过渡动画为0.6秒 */
+    box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
+    /* 设置内阴影效果 */
+}
+
+.card.trans .bark {
+    opacity: 1;
+    box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
+
+}
+
+
+
+
+/* 定义.card .details的样式 */
+.card .details {
+    position: absolute;
+    /* 设置定位为绝对定位 */
+    top: 0;
+    /* 顶部偏移0像素 */
+    left: 0;
+    /* 左侧偏移0像素 */
+    box-sizing: border-box;
+    /* 设置盒模型为边框盒模型 */
+    padding: 0 0 0 10px;
+    /* 设置内边距 */
+    z-index: -1;
+    /* 设置层级为-1 */
+    margin-top: 70px;
+    /* 上边距为70像素 */
+    transition: transform 0.7s, opacity 0.7s;
+    /* 设置过渡动画 */
+    transform-origin: left;
+}
+
+.card .details p {
+    font-size: 15px;
+    /* 设置字体大小为15像素 */
+    line-height: 5px;
+    /* 设置行高为5像素 */
+    transform: rotate(-10deg);
+    /* 设置旋转角度为-10度 */
+    padding: 0 0 0 20px;
+    /* 设置内边距 */
+}
+
+.card .details h4 {
+    text-align: center;
+    /* 设置文本居中 */
+}
+
+.text-right {
+    text-align: right;
+    /* 设置文本右对齐 */
+}
+
+
+.card.trans .details {
+    transform: rotateY(-135deg);
+
+}
+
+.card.closed .details {
+    display: none;
+    /* 设置隐藏 */
+}
+
+.card.closed .imgBox {
+    transform: rotateY(0);
+    /* 设置Y轴旋转角度为0 */
+}
